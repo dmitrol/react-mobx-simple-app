@@ -1,0 +1,21 @@
+.header {
+  background: var(--header-bg-color);
+  padding: 15px 0;
+}
+
+.header-link {
+  text-decoration: none;
+  color: var(--link-header-text-color);
+  transition: 200ms;
+}
+
+.header-link:hover {
+  color: var(--link-header-text-hover-color);
+}
+
+.header-link + .header-link {
+  margin-left: 12px;
+}
+.header-link.active {
+  color: var(--link-header-text-active-color);
+}
