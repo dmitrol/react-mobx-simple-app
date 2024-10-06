@@ -10,6 +10,9 @@ const AppHeader: React.FC = () => {
         <NavLink to="/users" className="header-link">
           users
         </NavLink>
+        <NavLink to="/todos" className="header-link">
+          todos
+        </NavLink>
         <NavLink to="/about" className="header-link">
           about
         </NavLink>

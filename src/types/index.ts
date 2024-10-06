@@ -37,6 +37,13 @@ export interface IComment {
   body: string;
 }
 
+export interface ITodo {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
 export interface IFilter {
   field: string;
   method: string;

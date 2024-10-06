@@ -6,6 +6,8 @@ import { SingleUserPage } from './pages/user/SingleUserPage';
 import { Layout } from './layouts/Layout';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { AboutPage } from './pages/AboutPage';
+import { TodoPage } from './pages/todo/TodoPage';
+import { SingleTodoPage } from './pages/todo/SingleTodoPage';
 
 const App: React.FC = () => {
   return (
@@ -20,6 +22,8 @@ const App: React.FC = () => {
           <Route path="users/:id" element={<SingleUserPage />} />
           <Route path="posts" element={<PostsPage />} />
           <Route path="posts/:id" element={<SinglePostPage />} />
+          <Route path="todos" element={<TodoPage />} />
+          <Route path="todos/:id" element={<SingleTodoPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>

@@ -1,0 +1,50 @@
+.todo-content {
+    padding: 8px 10px;
+    box-shadow: 0px 0px 9px 0px var(--table-row-shadow-color);
+    border-radius: 5px;
+    margin-bottom: 12px;
+  }
+  
+  .todo-id {
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  .todo-title {
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .todo-status {
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .todo-user {
+    margin-top: 5px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  
+  .todo-id .title {
+    text-transform: uppercase;
+    margin-right: 5px;
+  }
+  .todo-title .title {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .todo-status .title {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  .todo-user .title {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-right: 10px;
+  }

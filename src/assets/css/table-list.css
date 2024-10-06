@@ -61,11 +61,23 @@
   display: flex;
 }
 
+.table .table-row .todo-1,
+.table .table-header .todo-1 {
+  flex-basis: 100%;
+  display: flex;
+}
+.table .table-row .todo-2,
+.table .table-header .todo-2 {
+  flex-basis: 150px;
+  display: flex;
+}
+
 .table .table-header .user-1,
 .table .table-header .user-2,
 .table .table-header .user-3,
 .table .table-header .post-1,
-.table .table-header .post-2 {
+.table .table-header .post-2,
+.table .table-header .todo-1 {
   cursor: pointer;
   transition: all 200ms;
 }
