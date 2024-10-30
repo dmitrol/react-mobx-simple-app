@@ -18,7 +18,9 @@ class PostStore {
     this.setLoading(true);
     yield fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
       .then((response) => {
-        return response.json();
+        if (response.ok) {
+          return response.json();
+        }
       })
       .then((data: IPost) => {
         this.setPost(data);
@@ -34,11 +36,13 @@ class PostStore {
       `https://jsonplaceholder.typicode.com/posts?_per-page=${this.perPage}&_page=${page}`
     )
       .then((response) => {
-        const res = response.headers.get('x-total-count');
-        if (res) {
-          this.setTotalCount(+res);
+        if (response.ok) {
+          const res = response.headers.get('x-total-count');
+          if (res) {
+            this.setTotalCount(+res);
+          }
+          return response.json();
         }
-        return response.json();
       })
       .then((data: IPost[]) => {
         this.setPosts(data);
@@ -51,7 +55,9 @@ class PostStore {
     this.setLoading(true);
     yield fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
       .then((response) => {
-        return response.json();
+        if (response.ok) {
+          return response.json();
+        }
       })
       .then((data: IComment[]) => {
         this.setComments(data);

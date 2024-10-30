@@ -17,7 +17,9 @@ class TodoStore {
     this.setLoading(true);
     yield fetch(`https://jsonplaceholder.typicode.com/todos/${todoId}`)
       .then((response) => {
-        return response.json();
+        if (response.ok) {
+          return response.json();
+        }
       })
       .then((data: ITodo) => {
         this.setTodo(data);
@@ -33,11 +35,13 @@ class TodoStore {
       `https://jsonplaceholder.typicode.com/todos?_per-page=${this.perPage}&_page=${page}`
     )
       .then((response) => {
-        const res = response.headers.get('x-total-count');
-        if (res) {
-          this.setTotalCount(+res);
+        if (response.ok) {
+          const res = response.headers.get('x-total-count');
+          if (res) {
+            this.setTotalCount(+res);
+          }
+          return response.json();
         }
-        return response.json();
       })
       .then((data: ITodo[]) => {
         this.setAllTodo(data);
