@@ -7,10 +7,39 @@ interface IProps {
 }
 
 const AppPagination: React.FC<IProps> = ({ page, totalPage, changePage }) => {
-  const items = getPageArray(totalPage);
+  const { startItem, items, endItem } = getPageArray(page, totalPage, 5);
+
+  const prev = () => {
+    if (page > 1) {
+      changePage(page - 1);
+    }
+  };
+
+  const next = () => {
+    if (page < totalPage) {
+      changePage(page + 1);
+    }
+  };
 
   return (
     <div className="pagination-wrapper">
+      <span
+        className={
+          page == startItem ? 'pagination-item disabled' : 'pagination-item'
+        }
+        onClick={prev}
+      >
+        &lt;
+      </span>
+      <span
+        className={
+          page == startItem ? 'pagination-item active' : 'pagination-item'
+        }
+        onClick={() => changePage(startItem)}
+      >
+        {startItem}
+      </span>
+      {items[0] != 2 && <span className="separator">...</span>}
       {items.map((item) => (
         <span
           key={item}
@@ -22,6 +51,25 @@ const AppPagination: React.FC<IProps> = ({ page, totalPage, changePage }) => {
           {item}
         </span>
       ))}
+      {items[items.length - 1] != totalPage - 1 && (
+        <span className="separator">...</span>
+      )}
+      <span
+        className={
+          page == endItem ? 'pagination-item active' : 'pagination-item'
+        }
+        onClick={() => changePage(endItem)}
+      >
+        {endItem}
+      </span>
+      <span
+        className={
+          page == endItem ? 'pagination-item disabled' : 'pagination-item'
+        }
+        onClick={next}
+      >
+        &gt;
+      </span>
     </div>
   );
 };

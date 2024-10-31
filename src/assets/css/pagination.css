@@ -19,6 +19,18 @@
   background: var(--pagination-active-color);
 }
 
+.pagination-wrapper .pagination-item.disabled,
+.pagination-wrapper .pagination-item.disabled:hover {
+  cursor: not-allowed;
+  background: var(--button-disabled-color);
+}
+
 .pagination-wrapper .pagination-item + .pagination-item {
   margin-left: 8px;
+}
+
+.pagination-wrapper .separator {
+  padding: 3px 8px;
+  user-select: none;
+  letter-spacing: -1px;
 }

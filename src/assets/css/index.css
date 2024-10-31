@@ -22,6 +22,7 @@
   --header-bg-color: teal;
   --button-color: teal;
   --button-hover-color: #05aeae;
+  --button-disabled-color: #ebebeb;
   --table-row-color: #ffffff;
   --table-row-shadow-color: rgba(0, 0, 0, 0.1);
   --modal-shadow-color: rgba(160, 160, 160, 0.3);
